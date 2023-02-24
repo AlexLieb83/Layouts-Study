@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui;
+  margin: 0;
+}
+
+h1 {
+  line-height: 1.1;
+  font-size: 4rem;
+  max-width: 13ch;
+}
+
+.container {
+  --max-width: 50rem;
+  width: min(100% - 2rem, var(--max-width));
+  margin-inline: auto;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  padding: 1em;
+}
+
+.canvasContainer {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  height: 40vh;
+  clip-path: polygon(0 0, 100% 0, 100% 35%, 0% 100%);
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.heroTitle {
+  position: relative;
+}
+
+.heroTitleOverlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+}

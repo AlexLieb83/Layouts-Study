@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #333;
+  font-size: 16px;
+}
+
+.card {
+  background-color: #f8f8f8;
+  padding: 84px;
+  border-radius: 23px;
+}
+
+.title {
+  font-size: 34px;
+  font-family: Merriweather;
+}
+
+.avg-rating {
+  font-size: 26px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  min-width: 150px;
+}
+
+.avg-rating-section {
+  font-size: 14px;
+  padding: 17px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 7px 20px 0 rgba(115, 116, 156, 0.08);
+}
+
+.star-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.avg-rating-section .star-icon {
+  width: 46px;
+  height: 46px;
+}
+
+.star-icon .icon-path {
+  fill: #ffd66c;
+  stroke: #efb153;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}

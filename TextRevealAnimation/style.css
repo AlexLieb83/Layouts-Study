@@ -1,0 +1,18 @@
+header {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-family: "Bebas Neue", sans-serif;
+  /* CLIPPY - https://bennettfeely.com/clippy/ */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.char {
+  transform: translateY(-115px);
+  transition: transform 0.5;
+}

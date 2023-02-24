@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  place-content: center;
+  display: grid;
+  height: 100vh;
+  font-family: "Nunito", sans-serif;
+}
+
+h1 {
+  margin: 0;
+}
+
+.box {
+  position: relative;
+  background: white;
+  border-radius: 0.5em;
+  padding: 3em;
+  width: 200px;
+}
+
+.box:before {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(-45deg, #e609ff 0%, #40c9ff 100%);
+  filter: blur(20px);
+  transform: translate3d(0px, 20px, 0);
+  border-radius: inherit;
+}
+
+/* Prevents issues when parent creates a stacking context, like using the transform property */
+.box::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: inherit;
+  border-radius: inherit;
+}

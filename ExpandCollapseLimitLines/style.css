@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #f3f3f3;
+  overflow: hidden;
+}
+
+.card-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.card {
+  background: white;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.25em;
+}
+
+h2,
+p {
+  margin: 0;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+.cutoff-text {
+  --max-lines: 3;
+  --line-height: 1.4;
+  /* Limit Lines - ONE WAY TO DO IT */
+  /* display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--max-lines); */
+
+  /* ANOTHER WAY TO DO IT - MORE CONTROL */
+  max-height: calc(var(--max-lines) * 1em * var(--line-height));
+  line-height: var(--line-height);
+
+  overflow: hidden;
+  position: relative;
+}
+
+/* Fade Effect, only if NOT expanded */
+.cutoff-text.cutoff-text:has(+ .expand-button:not(:checked)):before {
+  content: "";
+  position: absolute;
+  height: calc(1em * var(--line-height));
+  width: 100%;
+  bottom: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, white);
+}
+
+.expand-button {
+  appearance: none;
+  border: 1px solid black;
+  padding: 0.5em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.expand-button:hover {
+  background-color: #ccc;
+}
+
+.expand-button::before {
+  content: "Expand";
+}
+.expand-button:checked:before {
+  content: "Collapse";
+}
+/* If checkbox is checked */
+.cutoff-text:has(+ .expand-button:checked) {
+  max-height: none;
+}
